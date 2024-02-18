@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+nav {
+    @include flexbox(row, space-between, center);
+    margin: 16px;;
+
+    .navbar__closeBtn {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+    }
+
+    .navbar__mobileMenu {
+        @include flexbox(column, justify-start, center);
+        transition: all 350ms ease-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+
+        &.isHidden {
+            transition: all 350ms ease-in;
+            right: -100vw;
+        }
+    }
+
+    .navbar__links {
+        margin-top: 36px;
+    }
+    
+    .navbar__header {
+        font-size: $smallScreenH1;
+        font-family: $company-font;
+
+        @media screen and (min-widith: 500px) {
+            font-size: $wideScreenH1;
+        }
+    }
+
+    .navbar__menuBtn {
+        @media  screen and (min-width: 500px) {
+            display: none;
+        }
+    }
+
+    .navbar__wide-screen-links {
+        @include flexbox(row, space-between, center);
+        gap: 16px;
+
+        @media screen and (max-width: 500px) {
+                display: none;
+        }
+    }
+}
