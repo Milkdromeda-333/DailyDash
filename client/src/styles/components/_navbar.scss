@@ -2,7 +2,11 @@
 
 nav {
     @include flexbox(row, space-between, center);
-    margin: 16px;;
+    margin: 16px;
+
+    a {
+        text-decoration: none;
+    }
 
     .navbar__closeBtn {
         position: absolute;

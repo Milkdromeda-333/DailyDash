@@ -1,10 +1,17 @@
-import Navbar from './components/Navbar'
+import { useContext } from "react";
+import {
+  
+} from "react-router-dom";
+import { Context as UserContext } from "./context/UserContext";
+import Auth from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+
 
 function App() {
-
+  const { user } = useContext(UserContext);
   return (
     <div className='app'>
-      <Navbar />
+      {user ? <Dashboard /> : <Auth />}
     </div>
   )
 }
