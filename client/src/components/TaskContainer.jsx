@@ -2,6 +2,7 @@ import { useState } from "react";
 import dayjs from "dayjs"
 import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
 import Task from "../components/Task";
+import TaskMetrics from "../components/TaskMetrics";
 
 const taskData =  [
     {
@@ -76,10 +77,13 @@ export default function TaskContainer() {
         }
     });
 
-
-
     return (
         <section className="taskContainer">
+            {/* METRICS */}
+            <TaskMetrics />
+
+            <button>add a task</button>
+
             {/* TASK DATE PICKER */}
             <div className="taskContainer--taskDateContainer">
                 <button className="taskContainer--taskDate" onClick={()=>setIsDatePickerShown(prev=>!prev)}>
