@@ -10,17 +10,20 @@ function UserContext(props) {
 
   const [user, setUser] = useState(null);
 
+  function clearUserState() {
+    setUser(null);
+  }
+
    useEffect(()=>{
       onAuthStateChanged(auth, (foundUser) => {
         if (foundUser) {
-          console.log(foundUser)
           setUser(foundUser);
         }
       });
     }, [])
 
     return (
-        <Context.Provider value={{user}}>
+        <Context.Provider value={{user, clearUserState}}>
             {children}
         </Context.Provider>
     )

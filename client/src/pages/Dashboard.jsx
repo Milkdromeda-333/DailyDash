@@ -1,8 +1,11 @@
-
+import TaskContainer from "../components/TaskContainer"
 
 export default function Dashboard() {
 
     return (
-        <h1>Dashboard Page</h1>
+        <section className="dashboard">
+            <h1>Dashboard Page</h1>
+            <TaskContainer />
+        </section>
     )
 }

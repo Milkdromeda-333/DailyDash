@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
-import { signUpLocally, logInLocally } from "../services/authService";
+// import { signUpLocally, logInLocally } from "../services/authService";
+import AuthService from "../services/authService";
+
 
 export default function Auth() {
 
@@ -11,9 +13,9 @@ export default function Auth() {
     function handleAuth(event) {
         event.preventDefault();
         if (isRegistering) {
-            signUpLocally(credentials);
+            AuthService.signUpLocally(credentials);
         } else {
-            logInLocally(credentials);
+           AuthService.logInLocally(credentials);
         }
     }
 

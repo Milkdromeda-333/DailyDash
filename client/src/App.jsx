@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 
 function App() {
   const { user } = useContext(UserContext);
+  
   return (
     <div className='app'>
       {user ? <Dashboard /> : <Auth />}

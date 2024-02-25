@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.taskContainer {
+
+    border: 1px solid black;
+
+    &--taskDate {
+        background-color: transparent;
+        border: none;
+    }
+
+}

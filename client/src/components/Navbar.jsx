@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { Context as UserContext } from "../context/UserContext";
+import AuthService from "../services/authService";
 
 export default function Navbar() {
 
+    const { user, clearUserState} = useContext(UserContext);
     const [isMobileMenuHidden, setIsMobileMenuHidden] = useState(true);
+
+    function signOut() {
+        clearUserState();
+        AuthService.logOut()
+    }
 
     return (
         <nav>
@@ -21,6 +29,9 @@ export default function Navbar() {
                 <li>
                         <NavLink to="settings">settings</NavLink>
                 </li>
+
+                <li onClick={signOut}>Logout</li>
+
                 
             </ul>
             
@@ -32,7 +43,7 @@ export default function Navbar() {
                 ${isMobileMenuHidden && "isHidden"}
                 `}>
 
-                <span className="navbar__closeBtn" onClick={() => setIsMobileMenuHidden(prev => !prev)}> close </span>
+                {user && (<><span className="navbar__closeBtn" onClick={() => setIsMobileMenuHidden(prev => !prev)}> close </span>
             
                 <ul className="navbar__links">
                     <li>
@@ -42,7 +53,9 @@ export default function Navbar() {
                     <li>
                         <NavLink to="settings">settings</NavLink>
                     </li>
-                </ul>
+                    
+                        <li onClick={signOut}>Logout</li>
+                </ul></>)}
             </div>
         </nav>
     )
