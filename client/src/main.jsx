@@ -8,6 +8,7 @@ import { UserContext } from './context/UserContext'
 import Layout from "./components/Layout";
 import App from './App';
 import Dashboard from "./pages/Dashboard";
+import Goals from "./pages/Goals";
 import './styles/index.scss'
 
 const router = createBrowserRouter([{
@@ -21,6 +22,9 @@ const router = createBrowserRouter([{
     }, {
       path: "/dashboard",
       element: <Dashboard />
+    }, {
+      path: "/goals",
+      element: <Goals />
     }
   ]
 }])
