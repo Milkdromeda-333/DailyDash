@@ -1,3 +1,5 @@
+import dateService from "../services/dateService";
+
 export default function Task(props) {
     const {
         title,
@@ -17,7 +19,7 @@ export default function Task(props) {
                 <div className="task--header">
                     <span>{title}</span>
                     <span>{ goalTitle }</span>
-                    <span>{dueDate && dueDate}</span>
+                   {dueDate && <span>due: {dateService.getFormattedDate(dueDate)}</span>}
                 </div>
 
                 <button>options</button>

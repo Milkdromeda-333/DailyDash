@@ -1,26 +1,38 @@
 @use "../abstracts" as *;
 
 .task {
-
+    
     @include flexbox(column, space-between, start);
     gap: 16px;
     padding: 16px;
     width: 100%;
     border: 1px solid black;
-
+    
+    @media (min-width: 500px) {
+        width: 60vw;
+    }
+    
     &--top {
         @include flexbox(row, space-between, start);
         width: 100%;
     }
-
+    
     &--header {
-        @include flexbox(row, start, start);
+        @include flexbox(column, start, start);
         gap: 4px;
+        
+        @media (min-width: 500px) {
+            @include flexbox(row, space-between, start);
+        }
     }
-
+    
     &--bottom {
-        @include flexbox(row, space-between, start);
+        @include flexbox(column, space-between, end);
         gap: 4px;
         width: 100%;
+        
+        @media (min-width: 850px) {
+            @include flexbox(row, space-between, start);
+        }
     }
 }

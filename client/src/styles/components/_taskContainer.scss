@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .taskContainer {
-    @include flexbox(column, center, start);
+    @include flexbox(column, center, center);
     gap: 16px;
     padding: 16px;
 
@@ -21,8 +21,9 @@
         }
     }
 
-    &--inProgressContainer {
-        width: 100%;
+    &--list {
+        @include flexbox(column, center, center);
+        gap: 16px;
     }
 
 }

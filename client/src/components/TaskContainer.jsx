@@ -1,5 +1,5 @@
 import { useState } from "react";
-import dayjs from "dayjs"
+import dateService from "../services/dateService";
 import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
 import Task from "../components/Task";
 import TaskMetrics from "../components/TaskMetrics";
@@ -33,7 +33,6 @@ const taskData =  [
         taskId: "3",
         goalId: "3",
         repeat: {frequency: "daily"},
-        duration: "01:00:00",
         progressStatus: "not in progress",
         progressTime: "00:30:00",
         description: "Finish the project report for submission next week"
@@ -42,25 +41,9 @@ const taskData =  [
 
 export default function TaskContainer() {
 
-    const [dateForTasks, setDateForTasks] = useState(getFormattedDate(new Date()));
+    const [dateForTasks, setDateForTasks] = useState(dateService.getFormattedDate(new Date()));
     const [isDatePickerShown, setIsDatePickerShown] = useState(false);
 
-    function isDateToday(date) {
-         const formattedDate = getFormattedDate(date);
-        const today = getFormattedDate(new Date());
-
-        if (formattedDate === today) {
-            return true;
-        }
-
-        return false;
-    }
-
-    function getFormattedDate(date) {
-        return dayjs(date).format('MM-DD-YYYY')
-    }
-
-    // const tasks = taskData.map(task => <Task key={task.taskId} {...task} />);
     const tasks = taskData.map(task => {
         if (task.progressStatus !== "in-progress") {
             return <Task key={task.taskId} {...task} />
@@ -88,8 +71,8 @@ export default function TaskContainer() {
             <div className="taskContainer--taskDateContainer">
                 <button className="taskContainer--taskDate" onClick={()=>setIsDatePickerShown(prev=>!prev)}>
                     <span>
-                        {isDateToday(dateForTasks) ?
-                            "Today" : getFormattedDate(dateForTasks)
+                        {dateService.isDateToday(dateForTasks) ?
+                            "Today" : dateService.getFormattedDate(dateForTasks)
                         }
                     </span>
 
@@ -106,15 +89,17 @@ export default function TaskContainer() {
             </div>
 
             {/* IN PROGRESS TASKS  */}
-            <section className="taskContainer--inProgressContainer">
-                <h2 className="">In Progress:</h2>
-                {tasksInProgress}
+            <section className="taskContainer-taskList">
+                {/* <div className="taskContainer--list"> */}
+                    <h2 className="taskContainer--listHeader">In Progress:</h2>
+                    <div className="taskContainer--list">{tasksInProgress}</div>
+                {/* </div> */}
             </section>
 
             {/* SCHEDULED TASKS  */}
-            <section className="taskContainer--inProgressContainer">
+            <section className="taskContainer-taskList">
                 <h2>To Do:</h2>
-                {tasks}
+                <div className="taskContainer--list">{tasks}</div>
             </section>
         </section>
     )
