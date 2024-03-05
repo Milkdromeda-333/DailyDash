@@ -12,3 +12,19 @@ a {
 button {
     font-family: $regular-font;
 }
+
+h1 {
+    font-size: $smallScreenH1;
+
+    @media (min-width: 500px) {
+        font-size: $wideScreenH1;
+    }
+}
+
+h2 {
+    font-size: $smallScreenH2;
+
+    @media (min-width: 500px) {
+        font-size: $wideScreenH2;
+    }
+}

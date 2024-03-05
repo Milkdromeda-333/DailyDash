@@ -79,15 +79,20 @@ export default function TaskContainer() {
 
     return (
         <section className="taskContainer">
+            <button className="taskContainer--addBtn">add a task</button>
+
             {/* METRICS */}
             <TaskMetrics />
-
-            <button>add a task</button>
 
             {/* TASK DATE PICKER */}
             <div className="taskContainer--taskDateContainer">
                 <button className="taskContainer--taskDate" onClick={()=>setIsDatePickerShown(prev=>!prev)}>
-                    {isDateToday(dateForTasks) ? <span>Today</span> : getFormattedDate(dateForTasks)}
+                    <span>
+                        {isDateToday(dateForTasks) ?
+                            "Today" : getFormattedDate(dateForTasks)
+                        }
+                    </span>
+
                     {!isDatePickerShown ?
                         <FaCaretRight /> : <FaCaretLeft />
                     }
@@ -102,7 +107,7 @@ export default function TaskContainer() {
 
             {/* IN PROGRESS TASKS  */}
             <section className="taskContainer--inProgressContainer">
-                <h2>In Progress:</h2>
+                <h2 className="">In Progress:</h2>
                 {tasksInProgress}
             </section>
 

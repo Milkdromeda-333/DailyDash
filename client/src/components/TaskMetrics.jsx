@@ -7,7 +7,7 @@ const metrics = {
 export default function TaskMetrics() {
     
     return (
-        <div>
+        <div className="taskMetrics">
             <span>Today&apos;s progress: {metrics.progress}</span>
                 <span>Goals completed { metrics.goalsCompleted }</span>
                 <span>Goals in progress: { metrics.goalsInProgress }</span>
