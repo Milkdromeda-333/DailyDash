@@ -28,6 +28,94 @@
         button,
         select {
             background-color: white;
-            @include themify(color, $mint-mystic, secondary)
+            @include themify(color, $mint-mystic, secondary);
         }
+}
+
+.mint-mystic-dark .task {
+    @include themify(background-color, $mint-mystic-dark, secondary);
+    @include themify(color, $mint-mystic-dark, primary);
+
+    button,
+    select {
+        @include themify(background-color, $mint-mystic-dark, primary);
+        color: white;
+    }
+}
+
+.crimson-sand .task {
+    @include themify(background-color, $crimson-sand, secondary);
+    @include themify(color, $crimson-sand, primary);
+
+    button,
+    select {
+        @include themify(background-color, $crimson-sand, primary);
+        color: white;
+    }
+}
+
+.emerald .task {
+    @include themify(background-color, $emerald, secondary);
+    @include themify(color, $emerald, primary);
+
+    button,
+    select {
+        @include themify(background-color, $emerald, primary);
+        color: white;
+    }
+}
+
+.strawberry .task {
+    @include themify(background-color, $strawberry, secondary);
+    @include themify(color, $strawberry, primary);
+
+    button,
+    select {
+        @include themify(background-color, $strawberry, primary);
+        color: white;
+    }
+}
+
+.strawberry .task {
+    @include themify(background-color, $strawberry, secondary);
+    @include themify(color, $strawberry, primary);
+
+    button,
+    select {
+        @include themify(background-color, $strawberry, primary);
+        color: white;
+    }
+}
+
+.cinnamon .task {
+    @include themify(background-color, $cinnamon, secondary);
+    @include themify(color, $cinnamon, primary);
+
+    button,
+    select {
+        @include themify(background-color, $cinnamon, primary);
+        color: white;
+    }
+}
+
+.cinnamon .task {
+    @include themify(background-color, $cinnamon, secondary);
+    @include themify(color, $cinnamon, primary);
+
+    button,
+    select {
+        @include themify(background-color, $cinnamon, primary);
+        color: white;
+    }
+}
+
+.test .task {
+    @include themify(background-color, $test, secondary);
+    @include themify(color, $test, primary);
+
+    button,
+    select {
+        @include themify(background-color, $test, primary);
+        color: white;
+    }
 }

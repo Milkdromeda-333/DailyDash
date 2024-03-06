@@ -31,3 +31,70 @@
             @include themify(color, $mint-mystic, secondary)
         }
 }
+
+.layout.mint-mystic-dark {
+    @include themify(background-color, $mint-mystic-dark, primary);
+    @include themify(color, $mint-mystic-dark, secondary);
+
+
+    button,
+    select {
+        background-color: white;
+        @include themify(color, $mint-mystic-dark, primary)
+    }
+}
+
+.layout.crimson-sand {
+    @include themify(background-color, $crimson-sand, primary);
+    @include themify(color, $crimson-sand, secondary);
+
+    button,
+    select {
+        @include themify(background-color, $crimson-sand, secondary);
+        @include themify(color, $crimson-sand, primary)
+    }
+}
+
+.layout.emerald {
+    @include themify(background-color, $emerald, primary);
+    @include themify(color, $emerald, secondary);
+
+    button,
+    select {
+        @include themify(background-color, $emerald, secondary);
+        @include themify(color, $emerald, primary)
+    }
+}
+
+.layout.strawberry {
+    @include themify(background-color, $strawberry, primary);
+    @include themify(color, $strawberry, secondary);
+
+    button,
+    select {
+        @include themify(background-color, $strawberry, secondary);
+        @include themify(color, $strawberry, primary)
+    }
+}
+
+.layout.cinnamon {
+    @include themify(background-color, $cinnamon, primary);
+    @include themify(color, $cinnamon, secondary);
+
+    button,
+    select {
+        @include themify(background-color, $cinnamon, secondary);
+        @include themify(color, $cinnamon, primary)
+    }
+}
+
+.layout.test {
+    @include themify(background-color, $test, primary);
+    @include themify(color, $test, secondary);
+
+    button,
+    select {
+        @include themify(background-color, $test, secondary);
+        @include themify(color, $test, primary)
+    }
+}

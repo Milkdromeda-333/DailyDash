@@ -9,7 +9,13 @@ function ThemeProvider({ children }) {
     const themes = [
         'plain-day',
         'plain-night',
-        'mint-mystic'
+        'mint-mystic',
+        'mint-mystic-dark',
+        'crimson-sand',
+        'emerald',
+        'strawberry',
+        'cinnamon',
+        'test'
     ]
 
     function changeTheme(newTheme) {

@@ -1,5 +1,6 @@
 // shared colors
 $cream: #e5dac9;
+$emerald: #05916c;
 
 $plain-day: (
     primary: $cream,
@@ -12,6 +13,36 @@ $plain-night: (
 );
 
 $mint-mystic: (
-    primary: #c3f5c9,
+    primary: #92ebc4,
     secondary: #602ca7,
 );
+
+$mint-mystic-dark: (
+    secondary: #c3f5c9,
+    primary: #602ca7,
+);
+
+$crimson-sand: (
+    primary: #c15b50,
+    secondary: #e4d8be,
+);
+
+$emerald: (
+    primary: #05916c,
+    secondary: #f3e6db,
+);
+
+$strawberry: (
+    primary: #f587c0,
+    secondary: #f7eee2,
+);
+
+$cinnamon: (
+    primary: #704e37,
+    secondary: #eae4cf,
+);
+
+$test: (
+    primary: #704e37,
+    secondary: #eae4cf,
+)
