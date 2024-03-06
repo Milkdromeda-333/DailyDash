@@ -1,0 +1,33 @@
+@use "../../abstracts" as *;
+
+.plain-day .task {
+    @include themify(background-color, $plain-day, secondary);
+        @include themify(color, $plain-day, primary);
+    
+        button,
+        select {
+            @include themify(background-color, $plain-day, primary);
+            @include themify(color, $plain-day, secondary);
+        }
+}
+
+ .plain-night .task {
+    @include themify(background-color, $plain-night, secondary);
+    @include themify(color, $plain-night, primary);
+
+    button, select {
+        @include themify(background-color, $plain-night, primary);
+        @include themify(color, $plain-night, secondary);
+    }
+}
+
+.mint-mystic .task {
+    @include themify(background-color, $mint-mystic, secondary);
+    color: white;
+    
+        button,
+        select {
+            background-color: white;
+            @include themify(color, $mint-mystic, secondary)
+        }
+}

@@ -98,7 +98,7 @@ export default function TaskContainer() {
 
             {/* SCHEDULED TASKS  */}
             <section className="taskContainer-taskList">
-                <h2>To Do:</h2>
+                <h2 className="taskContainer--listHeader">To Do:</h2>
                 <div className="taskContainer--list">{tasks}</div>
             </section>
         </section>

@@ -1,11 +1,14 @@
+// shared colors
+$cream: #e5dac9;
+
 $plain-day: (
-    primary: #edfaef,
-    secondary: #0f0f0f,
+    primary: $cream,
+    secondary: #191516,
 );
 
 $plain-night: (
-    primary: #0f0f0f,
-    secondary: #edfaef,
+    primary: #232422,
+    secondary: $cream,
 );
 
 $mint-mystic: (

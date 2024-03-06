@@ -13,9 +13,21 @@
 .layout.plain-night {
     @include themify(background-color, $plain-night, primary);
     @include themify(color, $plain-night, secondary);
+
+    button,
+    select {
+        @include themify(background-color, $plain-night, secondary);
+        @include themify(color, $plain-night, primary);
+    }
 }
 
 .layout.mint-mystic {
     @include themify(background-color, $mint-mystic, primary);
     @include themify(color, $mint-mystic, secondary);
+
+    
+    button, select {
+            background-color: white;
+            @include themify(color, $mint-mystic, secondary)
+        }
 }

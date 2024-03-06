@@ -43,7 +43,7 @@ export default function Navbar() {
                                 <option 
                                     value={themeName} 
                                     key={themeName} 
-                                    defaultValue={theme === themeName}
+                                    selected={theme === themeName}
                                 >{themeName}</option>
                             ))
                     }

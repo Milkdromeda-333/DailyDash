@@ -14,7 +14,7 @@ export default function Task(props) {
     }
 
     return (  
-        <div className="task">
+        <div className="task card">
             <div className="task--top">
                 <div className="task--header">
                     <span>{title}</span>
