@@ -28,8 +28,8 @@ export default function Task(props) {
             <div className="task--bottom">
                 <p>Description: {description}</p>
                 <select name="progress" onChange={updateProgress}>
-                    <option selected={progressStatus === "not in progress" && "selected"} value="not in progress">not in progress</option>
-                    <option value="in progress"  selected={progressStatus === "in-progress" && "selected"} >in progress</option>
+                    <option default={progressStatus === "not in progress" && "selected"} value="not in progress">not in progress</option>
+                    <option value="in progress"  default={progressStatus === "in-progress" && "selected"} >in progress</option>
                     <option value="completed">completed</option>
                     <option value="roll-over">roll-over</option>
                 </select>

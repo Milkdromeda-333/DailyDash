@@ -9,8 +9,11 @@ a {
     color: inherit;
 }
 
-button {
+button, select {
     font-family: $regular-font;
+    padding: 4px 8px;
+    border-radius: 5px;
+
 }
 
 h1 {

@@ -69,23 +69,23 @@ export default function TaskContainer() {
 
             {/* TASK DATE PICKER */}
             <div className="taskContainer--taskDateContainer">
-                <button className="taskContainer--taskDate" onClick={()=>setIsDatePickerShown(prev=>!prev)}>
-                    <span>
-                        {dateService.isDateToday(dateForTasks) ?
-                            "Today" : dateService.getFormattedDate(dateForTasks)
-                        }
-                    </span>
-
-                    {!isDatePickerShown ?
-                        <FaCaretRight /> : <FaCaretLeft />
+                    <div className="taskContainer--taskDate"  onClick={()=>setIsDatePickerShown(prev=>!prev)}>
+                        <span>
+                            {dateService.isDateToday(dateForTasks) ?
+                                "Today" : dateService.getFormattedDate(dateForTasks)
+                            }
+                        </span>
+                        {!isDatePickerShown ?
+                            <FaCaretRight /> : <FaCaretLeft />
                     }
-                </button>
+                    
+                </div>
+                    {isDatePickerShown &&
+                        <input type="date" 
+                            onChange={(event) => setDateForTasks(event.target.value)} 
+                    value={dateForTasks}
+                        />}
 
-                {isDatePickerShown &&
-                    <input type="date" 
-                        onChange={(event) => setDateForTasks(event.target.value)} 
-                        value={dateForTasks}
-                    />}
             </div>
 
             {/* IN PROGRESS TASKS  */}

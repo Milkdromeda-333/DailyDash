@@ -1,6 +1,13 @@
+@use "./themes" as *;
+@use "sass:map";
+
 @mixin flexbox($direction, $justify, $align) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
+}
+
+@mixin themify($key, $theme, $color) {
+    #{$key}: map.get($theme, $color);
 }

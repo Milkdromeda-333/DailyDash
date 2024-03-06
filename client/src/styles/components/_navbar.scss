@@ -2,7 +2,7 @@
 
 nav {
     @include flexbox(row, space-between, center);
-    margin: 16px;
+    padding: 16px;
 
     a {
         text-decoration: none;

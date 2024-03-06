@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { UserContext } from './context/UserContext'
+import { ThemeProvider } from './context/ThemeContext';
 import Layout from "./components/Layout";
 import App from './App';
 import Dashboard from "./pages/Dashboard";
@@ -32,7 +33,9 @@ const router = createBrowserRouter([{
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <UserContext>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+        </ThemeProvider>
     </UserContext>
   </React.StrictMode>
 )

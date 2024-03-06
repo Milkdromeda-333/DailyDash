@@ -1,0 +1,21 @@
+@use "../../abstracts" as *;
+
+.layout.plain-day {
+    @include themify(background-color, $plain-day, primary);
+    @include themify(color, $plain-day, secondary);
+
+    button, select {
+        @include themify(background-color, $plain-day, secondary);
+        @include themify(color, $plain-day, primary);
+    }
+}
+
+.layout.plain-night {
+    @include themify(background-color, $plain-night, primary);
+    @include themify(color, $plain-night, secondary);
+}
+
+.layout.mint-mystic {
+    @include themify(background-color, $mint-mystic, primary);
+    @include themify(color, $mint-mystic, secondary);
+}

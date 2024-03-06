@@ -11,13 +11,26 @@
     }
 
     &--taskDate {
+        @include flexbox(row, center, center);
         background-color: transparent;
         border: none;
         margin: 0;
         padding: 0;
+        cursor: pointer;
 
         span {
             font-size: $smallScreenH1
+        }
+    }
+
+    &--taskDateContainer {
+        @include flexbox(row, center, center);
+        position: relative;
+
+        & input {
+            position: absolute;
+            top: 0;
+            left: 100%;
         }
     }
 

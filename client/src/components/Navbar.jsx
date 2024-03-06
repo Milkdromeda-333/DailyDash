@@ -1,11 +1,13 @@
 import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Context as UserContext } from "../context/UserContext";
+import { ThemeContext } from "../context/ThemeContext";
 import AuthService from "../services/authService";
 
 export default function Navbar() {
 
-    const { user, clearUserState} = useContext(UserContext);
+    const { user, clearUserState } = useContext(UserContext);
+    const { theme, changeTheme, themes } = useContext(ThemeContext);
     const [isMobileMenuHidden, setIsMobileMenuHidden] = useState(true);
 
     function signOut() {
@@ -28,6 +30,24 @@ export default function Navbar() {
 
                 <li>
                         <NavLink to="settings">settings</NavLink>
+                </li>
+
+                <li>
+                    <select name="theme"
+                        onChange={(e) => {
+                            changeTheme(e.target.value);
+                        }}
+                    >
+                        {
+                            themes.map(themeName => (
+                                <option 
+                                    value={themeName} 
+                                    key={themeName} 
+                                    defaultValue={theme === themeName}
+                                >{themeName}</option>
+                            ))
+                    }
+                    </select>
                 </li>
 
                 <li onClick={signOut}>Logout</li>
