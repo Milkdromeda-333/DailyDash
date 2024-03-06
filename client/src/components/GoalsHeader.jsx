@@ -4,8 +4,9 @@ export default function GoalsHeader() {
 
     const [filter, setFilter] = useState("none");
     const [name, setName] = useState("");
+    
     return (
-        <div>
+        <div className='goalsHeader'>
             <div>
                 <span>goals completed: 1/3</span>
             </div>
@@ -17,7 +18,7 @@ export default function GoalsHeader() {
             </select>
 
             <label htmlFor="search">
-                Search
+                Search:
                 <input type="text" name="search" id='search' value={name} onChange={e => setName(e.target.value)} />
             </label>
         </div>

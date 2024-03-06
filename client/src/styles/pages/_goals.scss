@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.goals {
+    @include flexbox(column, center, center);
+    gap: 16px;
+    margin: $pageMargin;
+
+    &--addBtn {
+        display: block;
+        margin-left: auto
+    }
+
+    &--goalsContainer {
+        @include flexbox(column, center, center); 
+        gap: 16px;
+
+        @media (min-width: 500px) {
+                width: 80%;
+            }
+    }
+}

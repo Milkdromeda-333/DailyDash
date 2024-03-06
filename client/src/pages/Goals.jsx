@@ -8,7 +8,15 @@ const goals =  [
         id: "1",
         progressStatus: "in-progress",
         description: "Gotta learn to drive so i can get a job!",
-        nextTask: { id: 2, name: "Schedule test" },
+        nextTask: { id:1, name: "Schedule test" },
+    },
+     {
+        name: "Buy newest phone",
+        dueDate: "2019-03-06T00:00:00Z",
+        id: "2",
+        progressStatus: "not in progress",
+        description: "I want the new samsung phone but I should save up money first",
+        nextTask: { id: 2, name: "Work all week" },
     }
 ]
 export default function Goals() {
@@ -18,14 +26,12 @@ export default function Goals() {
     })
 
     return (
-        <div>
-            <h1>Goals</h1>
-
-            <button>Add a new goal</button>
+        <div className="goals">
+            <button className="goals--addBtn">Add a new goal</button>
 
             <GoalsHeader />
             
-            {allGoalsData}
+            <div className="goals--goalsContainer">{allGoalsData}</div>
         </div>
     )
 }

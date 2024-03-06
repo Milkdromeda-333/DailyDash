@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.goal {
+    @include flexbox(column, center, center);
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid black;
+
+    &--header {
+        @include flexbox(column, center, center);
+        gap:16px;
+    }
+
+    &--nextTaskContainer {
+        @include flexbox(column, space-between, center);
+        gap: 16px;
+        width: 100%;
+
+        @media (min-width: 500px) {
+         @include flexbox(row, space-between, center);
+        }
+    }
+}
