@@ -1,5 +1,6 @@
 @use "./themes" as *;
 @use "sass:map";
+@use 'sass:color';
 
 /*
 * Adds a flexbox
@@ -25,17 +26,25 @@
 }
 
 /*
-* Inverts theme for class selector. background color gets secondary color, color gets primary.
-* $class - class name to appy colors to
+* Returns colors for every theme, and inverts buttons and dropdown selectors.
+* $class - class of component to apply styles to
 */
-@mixin invertTheme($class) {
-    
+@mixin themifyComponent($class) {
+
     @each $theme, $colors in $themes {
 
-        .#{$theme} .#{$class} {
-            background-color: map-get($colors, secondary);
-            color: map-get($colors, primary);
-        }
+        $primary: map-get($colors, primary);
+        $secondary: map-get($colors, secondary);
 
+        .#{$theme} .#{$class} {
+            background-color: $secondary;
+            color: $primary;
+
+            button,
+            select {
+                background-color: color.adjust($primary, $lightness: 5);
+                color: $secondary;
+            }
+        }
     }
 }
