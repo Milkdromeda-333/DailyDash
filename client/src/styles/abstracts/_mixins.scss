@@ -1,6 +1,12 @@
 @use "./themes" as *;
 @use "sass:map";
 
+/*
+* Adds a flexbox
+* $direction - orientation of desired flexbox
+* $justify - how the elements will be spaced horizontally
+* $align - how the elements will be spaced vertically
+*/
 @mixin flexbox($direction, $justify, $align) {
     display: flex;
     flex-direction: $direction;
@@ -8,6 +14,28 @@
     align-items: $align;
 }
 
+/*
+* Adds desired theme color to desired css key
+* $key - css property to apply  color
+* $theme - theme to select
+* $color - color to designate to css property
+*/
 @mixin themify($key, $theme, $color) {
     #{$key}: map.get($theme, $color);
+}
+
+/*
+* Inverts theme for class selector. background color gets secondary color, color gets primary.
+* $class - class name to appy colors to
+*/
+@mixin invertTheme($class) {
+    
+    @each $theme, $colors in $themes {
+
+        .#{$theme} .#{$class} {
+            background-color: map-get($colors, secondary);
+            color: map-get($colors, primary);
+        }
+
+    }
 }

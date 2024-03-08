@@ -6,7 +6,6 @@
     padding: 16px;
     width: 100%;
     max-width: 700px;
-    border: 1px solid black;
 
     &--header {
         @include flexbox(column, center, center);
