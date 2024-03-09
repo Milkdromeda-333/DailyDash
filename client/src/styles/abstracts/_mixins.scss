@@ -29,22 +29,36 @@
 * Returns colors for every theme, and inverts buttons and dropdown selectors.
 * $class - class of component to apply styles to
 */
-@mixin themifyComponent($class) {
+@mixin themifyComponent($class, $invert: false) {
 
     @each $theme, $colors in $themes {
 
         $primary: map-get($colors, primary);
         $secondary: map-get($colors, secondary);
 
-        .#{$theme} .#{$class} {
+        @if ($invert) {
+            .#{$theme} .#{$class} {
+                background-color: $primary;
+                color: color.adjust($secondary, $lightness: -5%);
+
+                button,
+                select {
+                background-color: color.adjust($secondary, $lightness: -5%);
+                color: $primary;
+            }
+        }
+        } @else {
+            .#{$theme} .#{$class} {
             background-color: $secondary;
-            color: $primary;
+            color: color.adjust($primary, $lightness: -5%);
 
             button,
             select {
-                background-color: color.adjust($primary, $lightness: 5);
+                background-color: color.adjust($primary, $lightness: -5%);
                 color: $secondary;
             }
         }
+        }
+        
     }
 }

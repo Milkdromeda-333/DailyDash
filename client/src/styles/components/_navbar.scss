@@ -15,14 +15,14 @@ nav {
     }
 
     .navbar__mobileMenu {
-        @include flexbox(column, justify-start, center);
+        @include flexbox(column, center, center);
         transition: all 350ms ease-out;
         position: absolute;
         top: 0;
         right: 0;
+        z-index: 2;
         height: 100vh;
         width: 100vw;
-        background-color: white; // make this change with theme
 
         &.isHidden {
             transition: all 350ms ease-in;
@@ -31,6 +31,8 @@ nav {
     }
 
     .navbar__links {
+        @include flexbox(column, space-around, center);
+        height: 30vh;
         margin-top: 36px;
     }
     

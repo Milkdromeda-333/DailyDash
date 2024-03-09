@@ -3,8 +3,6 @@
 .goalsHeader {
         @include flexbox(column, space-between, center);
         gap: 10px;
-        background-color: black;
-        color: white;
         padding: 16px;
 
     @media (min-width: 500px) {
