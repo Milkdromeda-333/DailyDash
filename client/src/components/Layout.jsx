@@ -8,9 +8,12 @@ export default function Layout() {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className={`layout ${theme}`}>
-            <Navbar />
-            <Outlet/>
+        <div className={theme}>
+        <div className="layout">
+            
+                <Navbar />
+                <Outlet/>
+            </div>
         </div>
     )
 }

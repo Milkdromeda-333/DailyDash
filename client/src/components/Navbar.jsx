@@ -66,11 +66,33 @@ export default function Navbar() {
                 {user && (<><span className="navbar__closeBtn" onClick={() => setIsMobileMenuHidden(prev => !prev)}> close </span>
             
                 <ul className="navbar__links">
-                    <li>
+                    <li onClick={()=>setIsMobileMenuHidden(prev=>!prev)}>
                         <NavLink to="dashboard">dashboard</NavLink>
                     </li>
-
+                        
+                    <li onClick={()=>setIsMobileMenuHidden(prev=>!prev)}>
+                        <NavLink to="goals">goals</NavLink>
+                    </li>
+                        
                     <li>
+                        <select name="theme"
+                            onChange={(e) => {
+                                changeTheme(e.target.value);
+                            }}
+                        >
+                            {
+                                themes.map(themeName => (
+                                    <option 
+                                        value={themeName} 
+                                        key={themeName} 
+                                        selected={theme === themeName}
+                                    >{themeName}</option>
+                                ))
+                        }
+                        </select>
+                    </li>
+
+                    <li onClick={()=>setIsMobileMenuHidden(prev=>!prev)}>
                         <NavLink to="settings">settings</NavLink>
                     </li>
                     

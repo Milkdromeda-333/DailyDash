@@ -15,6 +15,7 @@ function ThemeProvider({ children }) {
         'emerald',
         'strawberry',
         'cinnamon',
+        'ketchup',
         'test'
     ]
 

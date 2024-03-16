@@ -28,6 +28,7 @@
 /*
 * Returns colors for every theme, and inverts buttons and dropdown selectors.
 * $class - class of component to apply styles to
+* $invert - pass in a boolean wether to invert background and text colors or no
 */
 @mixin themifyComponent($class, $invert: false) {
 
