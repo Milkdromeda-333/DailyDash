@@ -10,6 +10,7 @@
     @media (min-width: 500px) {
         width: 60vw;
     }
+
     
     &--top {
         @include flexbox(row, space-between, start);

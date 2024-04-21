@@ -2,4 +2,10 @@
 
 .dashboard {
     margin: $pageMargin;
+    margin-bottom: 0;
+
+    &--addBtn {
+        display: block;
+        margin-left: auto;
+    }
 }

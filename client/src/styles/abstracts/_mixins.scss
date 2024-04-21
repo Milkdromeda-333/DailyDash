@@ -21,8 +21,16 @@
 * $theme - theme to select
 * $color - color to designate to css property
 */
-@mixin themify($key, $theme, $color) {
-    #{$key}: map.get($theme, $color);
+// @mixin themify($key, $theme, $color) {
+//     #{$key}: map.get($theme, $color);
+// }
+
+@mixin themify($key, $class, $color) {
+    @each $theme, $colors in $themes {
+        .#{$theme} .#{$class} {
+            #{$key}: map.get($colors, $color);
+        }
+    }
 }
 
 /*
@@ -30,7 +38,7 @@
 * $class - class of component to apply styles to
 * $invert - pass in a boolean wether to invert background and text colors or no
 */
-@mixin themifyComponent($class, $invert: false) {
+@mixin themifyComponent($class, $invert: false, $borderify: false) {
 
     @each $theme, $colors in $themes {
 
@@ -42,6 +50,10 @@
                 background-color: $primary;
                 color: color.adjust($secondary, $lightness: -5%);
 
+                @if($borderify) {
+                    border: 1px solid $secondary;
+                }
+
                 button,
                 select {
                 background-color: color.adjust($secondary, $lightness: -5%);
@@ -52,6 +64,9 @@
             .#{$theme} .#{$class} {
             background-color: $secondary;
             color: color.adjust($primary, $lightness: -5%);
+            @if($borderify) {
+                border: 1px solid $secondary;
+            }
 
             button,
             select {
@@ -60,6 +75,5 @@
             }
         }
         }
-        
     }
 }

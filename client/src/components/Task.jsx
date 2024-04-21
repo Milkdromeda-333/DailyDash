@@ -1,4 +1,7 @@
 import dateService from "../services/dateService";
+import MDEditor, { selectWord } from "@uiw/react-md-editor";
+import "@uiw/react-md-editor/markdown-editor.css";
+import "@uiw/react-markdown-preview/markdown.css";
 
 export default function Task(props) {
     const {
@@ -8,6 +11,8 @@ export default function Task(props) {
         description,
         progressStatus
     } = props;
+
+    // const [newDescription, setNewDescription] = useState(description);
     
     function updateProgress(newStatus) {
 
@@ -26,7 +31,9 @@ export default function Task(props) {
             </div>
 
             <div className="task--bottom">
-                <p>Description: {description}</p>
+                <p>Description: {description} </p>
+                 {/* <MDEditor.Markdown source={description} /> */}
+                
                 <select name="progress" onChange={updateProgress}>
                     <option default={progressStatus === "not in progress" && "selected"} value="not in progress">not in progress</option>
                     <option value="in progress"  default={progressStatus === "in-progress" && "selected"} >in progress</option>

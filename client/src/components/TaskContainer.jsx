@@ -62,7 +62,6 @@ export default function TaskContainer() {
 
     return (
         <section className="taskContainer">
-            <button className="taskContainer--addBtn">add a task</button>
 
             {/* METRICS */}
             <TaskMetrics />

@@ -1,0 +1,18 @@
+@use "../../abstracts" as *;
+@use "sass:map";
+@use 'sass:color';
+
+@include themify(background-color, "slider", secondary);
+@include themify(background-color, "slider::before", primary);
+
+
+@each $theme, $colors in $themes {
+
+    .#{$theme} input + .slider {
+        background-color: color.adjust(map.get($colors, secondary), $lightness: 0%);
+    }
+
+    .#{$theme} input:checked+.slider {
+        background-color: color.adjust(map.get($colors, secondary), $lightness: -10%);
+    }
+}
