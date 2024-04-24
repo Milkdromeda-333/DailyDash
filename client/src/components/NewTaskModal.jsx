@@ -17,7 +17,7 @@ export default function NewTaskModal(props) {
         amOrPm: "pm"
     });
     const [date, setDate] = useState(null);
-    const [description, setDescription] = useState("");
+    const [newDescription, setNewDescription] = useState("");
 
 
     function getMinutes() {
@@ -58,7 +58,13 @@ export default function NewTaskModal(props) {
                         <label htmlFor="description">
                             description:
                         </label>
-                            <textarea name="description" id="description"className="newTaskModal--description" cols="30" rows="10"></textarea>
+                        <textarea
+                            id="description"
+                            value={newDescription}
+                            className="newTaskModal--description"
+                            onChange={e=>setNewDescription(e.target.value)}
+                            rows="5"
+                        ></textarea>
 
                         {/* DUE DATE */}
                         <div className="newTaskModal--dueDate">

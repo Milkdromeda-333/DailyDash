@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Goal from "../components/Goal";
 import GoalsHeader from "../components/GoalsHeader";
+import NewGoalModal from "../components/NewGoalModal";
 
 const goals =  [
     {
@@ -21,17 +23,24 @@ const goals =  [
 ]
 export default function Goals() {
 
+    const [isModalShown, setIsModalShown] = useState(false);
+
+
     const allGoalsData = goals.map(goal => {
         return <Goal {...goal} key={goal.id}  />
     })
 
     return (
         <div className="goals">
-            <button className="goals--addBtn">Add a new goal</button>
+            <button
+                className="goals--addBtn"
+                onClick={()=>setIsModalShown(true)}
+            >Add a new goal</button>
 
             <GoalsHeader />
             
             <div className="goals--goalsContainer">{allGoalsData}</div>
+            <NewGoalModal isHidden={!isModalShown} toggleModal={()=>setIsModalShown(false)} />
         </div>
     )
 }
